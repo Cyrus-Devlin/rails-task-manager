@@ -1,0 +1,27 @@
+
+<div class="container">
+<h1>Individual Task List</h1>
+<ul>
+<li>Text: <%= @task.title %></li>
+<li><%= @task.details %></li>
+<li><%= @task.completed %></li>
+</ul>
+
+<i class="fa-solid fa-trash">
+  <%= link_to "Delete",
+    task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</i>
+
+<%= p "-"%>
+<i class="fa-solid fa-pen-to-square">
+<%= link_to("Edit task", task_edit_path)%>
+</i>
+
+<%= p "-"%>
+
+<i class="fa-solid fa-rotate-left">
+<%= link_to("Back to list", tasks_path)%>
+</i>
+
+</div>
